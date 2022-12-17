@@ -1,4 +1,4 @@
-platform :osx, '10.10'
+platform :osx, '13.0'
 use_frameworks!
 
 target 'Clipy' do
@@ -6,7 +6,6 @@ target 'Clipy' do
   # Application
   pod 'PINCache'
   pod 'Sauce'
-  pod 'Sparkle'
   pod 'RealmSwift'
   pod 'RxCocoa'
   pod 'RxSwift'
@@ -18,7 +17,6 @@ target 'Clipy' do
   pod 'LetsMove'
   pod 'SwiftHEXColors'
   # Utility
-  pod 'BartyCrouch'
   pod 'SwiftLint'
   pod 'SwiftGen'
 

@@ -11,7 +11,6 @@
 //
 
 import Cocoa
-import Sparkle
 import RxCocoa
 import RxSwift
 import LoginServiceKit
@@ -153,7 +152,7 @@ class AppDelegate: NSObject, NSMenuItemValidation {
 
     private func toggleAddingToLoginItems(_ isEnable: Bool) {
         let appPath = Bundle.main.bundlePath
-        LoginServiceKit.removeLoginItems(at: appPath)
+        // LoginServiceKit.removeLoginItems(at: appPath)
         guard isEnable else { return }
         LoginServiceKit.addLoginItems(at: appPath)
     }
@@ -182,11 +181,6 @@ extension AppDelegate: NSApplicationDelegate {
             promptToAddLoginItems()
         }
 
-        // Sparkle
-        let updater = SUUpdater.shared()
-        updater?.feedURL = Constants.Application.appcastURL
-        updater?.automaticallyChecksForUpdates = AppEnvironment.current.defaults.bool(forKey: Constants.Update.enableAutomaticCheck)
-        updater?.updateCheckInterval = TimeInterval(AppEnvironment.current.defaults.integer(forKey: Constants.Update.checkInterval))
 
         // Binding Events
         bind()
